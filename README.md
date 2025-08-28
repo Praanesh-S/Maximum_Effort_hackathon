@@ -40,7 +40,8 @@ JavaScript (ES6): For all interactivity, state management, and therapeutic logic
 
 HTML5 & CSS3: For the structure and basic styling of the application.
 
-Replit: For in-browser development and instant hosting.
+live demo:
+[Replit: For in-browser development and instant hosting.](https://c47da24b-7cc8-4096-9806-e7ca6378862c-00-2udqo85utygw.pike.replit.dev/)
 
 🎮 How to Use
 Launch the Demo: Open the live demo link above.
