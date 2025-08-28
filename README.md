@@ -1,1 +1,0 @@
-# Maximum_Effort_hackathon
