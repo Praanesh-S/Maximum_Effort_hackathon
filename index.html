@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MindStage VR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<body>
+
+<a-scene background="color: #222222">
+
+    <a-assets>
+        <img id="sky-texture" src="bg.jpg">
+        <img id="floor-texture" src="floor.jpg">
+
+        <a-asset-item id="person-model" src="Fitness Character.glb"></a-asset-item>
+
+        <canvas id="button-text-canvas" width="256" height="128"></canvas>
+        <canvas id="next-level-canvas" width="256" height="128"></canvas>
+        <canvas id="reset-canvas" width="256" height="128"></canvas>
+    </a-assets>
+    <a-light type="ambient" color="#FFF" intensity="0.5"></a-light>
+
+    <a-light type="directional" color="#FFF" intensity="0.5" position="-5 10 2"></a-light>
+
+
+    <a-sky src="#sky-texture"></a-sky>
+
+
+    <a-entity id="player-rig" position="-1 1.8 -8" rotation="0 -75 0">
+        <a-camera>
+            <a-cursor raycaster="objects: [geometry]"></a-cursor>
+        </a-camera>
+    </a-entity>
+
+
+    <a-entity id="world" position="0 1.8 -8" rotation="0 -45 0">
+
+        <a-plane id="stage-floor" position="0 0.01 0" rotation="-90 0 0" width="12" height="9" material="src: #floor-texture" shadow="receive: true"></a-plane>
+
+        <a-box id="lectern" position="0 0.6 -0.5" width="1" height="1.1" depth="0.5" color="darkblue" shadow="cast: true"></a-box>
+
+        <a-entity id="audience-easy" visible="true">
+            <a-gltf-model src="#person-model" scale="0.8 0.8 0.8" position="-2 0 -2" rotation="0 15 0" shadow="cast: true"></a-gltf-model>
+            <a-gltf-model src="#person-model" scale="0.8 0.8 0.8" position="0 0 -2" rotation="0 0 0" shadow="cast: true"></a-gltf-model>
+            <a-gltf-model src="#person-model" scale="0.8 0.8 0.8" position="2 0 -2" rotation="0 -15 0" shadow="cast: true"></a-gltf-model>
+        </a-entity>
+
+        <a-entity id="audience-hard" visible="false">
+             <a-gltf-model src="#person-model" scale="0.8 0.8 0.8" position="-3.5 0 -2" rotation="0 20 0" shadow="cast: true"></a-gltf-model>
+             <a-gltf-model src="#person-model" scale="0.8 0.8 0.8" position="-1.5 0 -2" rotation="0 10 0" shadow="cast: true"></a-gltf-model>
+             <a-gltf-model src="#person-model" scale="0.8 0.8 0.8" position="0.5 0 -2" rotation="0 -5 0" shadow="cast: true"></a-gltf-model>
+             <a-gltf-model src="#person-model" scale="0.8 0.8 0.8" position="2.5 0 -2" rotation="0 -15 0" shadow="cast: true"></a-gltf-model>
+             <a-gltf-model src="#person-model" scale="0.8 0.8 0.8" position="-2.5 0 -4" rotation="0 15 0" shadow="cast: true"></a-gltf-model>
+             <a-gltf-model src="#person-model" scale="0.8 0.8 0.8" position="0 0 -4" rotation="0 0 0" shadow="cast: true"></a-gltf-model>
+             <a-gltf-model src="#person-model" scale="0.8 0.8 0.8" position="2.5 0 -4" rotation="0 -15 0" shadow="cast: true"></a-gltf-model>
+        </a-entity>
+
+        <a-box id="anxiety-button" position="0 1.2 -0.3" scale="0.3 0.2 0.05" color="#B91C1C">
+            <a-plane position="0 0 0.51" width="1" height="0.5" material="src: #button-text-canvas; transparent: true"></a-plane>
+        </a-box>
+
+        <a-box id="next-level-button" position="0.5 1.2 -0.3" scale="0.3 0.2 0.05" color="#3B82F6" visible="false">
+            <a-plane position="0 0 0.51" width="1" height="0.5" material="src: #next-level-canvas; transparent: true"></a-plane>
+        </a-box>
+
+        <a-box id="reset-button" position="-0.5 1.2 -0.3" scale="0.3 0.2 0.05" color="#F59E0B" visible="false">
+            <a-plane position="0 0 0.51" width="1" height="0.5" material="src: #reset-canvas; transparent: true"></a-plane>
+        </a-box>
+
+        <a-text id="anxiety-display" value="Anxiety Level: 0" position="0 0.9 -0.25" color="white" align="center" width="2"></a-text>
+
+        <a-sphere id="breathing-sphere" position="0 1.5 -2" radius="0.3" color="#34D399" visible="false"></a-sphere>
+        <a-text id="breathing-text" value="Breathe In..." position="0 2.2 -2" align="center" color="white" width="4" visible="false"></a-text>
+
+    </a-entity>
+
+</a-scene>
+
+<script src="script.js"></script>
+
+</body>
+</html>
