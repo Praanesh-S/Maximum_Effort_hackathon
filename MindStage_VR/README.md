@@ -1,4 +1,4 @@
-# Maximum_Effort_hackathon
+# MindStage VR
 MindStage VR: A Web-Based Exposure Therapy Tool
 MindStage VR is an immersive, web-based virtual reality prototype designed to help individuals overcome glossophobia (the fear of public speaking) through controlled exposure therapy. This application provides a safe, adaptive environment where users can practice public speaking, manage anxiety, and build confidence.
 
